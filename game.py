@@ -29,6 +29,11 @@ class Brisca:
         self.mazo = crear_mazo()
         barajar_mazo(self.mazo)
 
+        # En partidas de 3 jugadores, quitar una carta (el 2 de oros)
+        # para que 39 cartas se dividan exactamente entre 3
+        if len(self.jugadores) == 3:
+            self.mazo = [c for c in self.mazo if not (c.numero == 2 and c.palo == 'oros')]
+
         # Repartir 3 cartas a cada jugador
         self.repartir()
 
