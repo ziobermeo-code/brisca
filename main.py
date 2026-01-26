@@ -50,8 +50,17 @@ def elegir_carta_humano(jugador, partida):
 
 def jugar_baza(partida, jugador_humano):
     """Juega una baza completa."""
+    # Verificar que hay cartas para jugar
+    if all(len(j.mano) == 0 for j in partida.jugadores):
+        return None
+
     for _ in range(len(partida.jugadores)):
         jugador = partida.jugador_actual()
+
+        # Saltar jugadores sin cartas (puede pasar en partidas de 3)
+        if not jugador.mano:
+            partida.turno_actual = (partida.turno_actual + 1) % len(partida.jugadores)
+            continue
 
         if isinstance(jugador, JugadorHumano):
             mostrar_estado(partida, jugador_humano)
@@ -76,6 +85,8 @@ def jugar_baza(partida, jugador_humano):
     # Robar cartas
     partida.robar_cartas()
 
+    return ganador
+
 
 def mostrar_resultado_final(partida):
     """Muestra el resultado final de la partida."""
@@ -92,7 +103,16 @@ def mostrar_resultado_final(partida):
 
     ganador = partida.obtener_ganador()
     print()
-    if isinstance(ganador, list):
+    if ganador is None:
+        # Determinar ganador por puntos si la partida terminó abruptamente
+        max_puntos = max(j.puntos for j in partida.jugadores)
+        ganadores = [j for j in partida.jugadores if j.puntos == max_puntos]
+        if len(ganadores) == 1:
+            print(f"GANADOR: {ganadores[0].nombre}!")
+        else:
+            nombres = ", ".join(g.nombre for g in ganadores)
+            print(f"EMPATE entre: {nombres}")
+    elif isinstance(ganador, list):
         nombres = ", ".join(g.nombre for g in ganador)
         print(f"EMPATE entre: {nombres}")
     else:
@@ -136,7 +156,9 @@ def main():
     input("\nPulsa Enter para comenzar...")
 
     while not partida.partida_terminada():
-        jugar_baza(partida, jugador_humano)
+        resultado = jugar_baza(partida, jugador_humano)
+        if resultado is None:
+            break
 
         if not partida.partida_terminada():
             input("\nPulsa Enter para continuar...")
