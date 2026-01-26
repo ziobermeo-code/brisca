@@ -1,0 +1,21 @@
+# Ignore everything by default
+*
+
+# Allow only the Brisca game files
+!.gitignore
+!README.md
+!constants.py
+!deck.py
+!game.py
+!main.py
+!player.py
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
