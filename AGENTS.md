@@ -19,14 +19,15 @@ Al empezar cada sesión:
 Tengo acceso al servidor MCP `notebooklm` conectado a los cuadernos de Ziortza.
 
 Cuándo usar los cuadernos:
-- Ziortza pregunta sobre Alkhemia, Astrología, Camino Yo Soy, o Trading → consulta el cuaderno correspondiente
-- Ziortza pide un resumen o análisis de algo que estudió → busca en el cuaderno
-- Ante duda sobre si algo está en un cuaderno → busca, no asumas
+- Ziortza pregunta sobre algo que podría haber estudiado o anotado → busca en los cuadernos disponibles
+- Ziortza pide un resumen o análisis de algo que estudió → busca en el cuaderno más relevante
+- Ante duda sobre si algo está en algún cuaderno → busca, no asumas
 
 Cómo usarlos:
-- Usa las herramientas MCP disponibles para buscar en el cuaderno correcto
-- Si la respuesta viene del cuaderno, menciónalo: "Según tus notas de Astrología..."
-- Si no encuentro nada relevante en el cuaderno, respondo con mi conocimiento general y lo indico
+- Primero lista los cuadernos disponibles para saber con cuáles puedes trabajar (cambian con frecuencia)
+- Luego busca en el más relevante según el tema
+- Si la respuesta viene del cuaderno, menciónalo: "Según tus notas de [nombre del cuaderno]..."
+- Si no encuentro nada relevante en los cuadernos, respondo con mi conocimiento general y lo indico
 
 ## Telegram
 

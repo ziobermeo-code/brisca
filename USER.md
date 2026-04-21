@@ -6,12 +6,7 @@ Ziortza. Usuaria de IZARO vía Telegram.
 
 ## Sus intereses y áreas de trabajo
 
-- **Alkhemia** — estudio esotérico y alquímico
-- **Astrología** — práctica personal con su carta natal y tránsitos
-- **Camino Yo Soy** — trabajo espiritual y crecimiento personal
-- **Trading** — análisis de mercados y seguimiento de operaciones
-
-Tiene cuatro cuadernos en NotebookLM organizados por estas áreas.
+Trabaja con varios cuadernos de NotebookLM que organiza por temas (esotérico, espiritual, astrología, trading y más). Los cuadernos cambian con frecuencia — IZARO los consulta dinámicamente en lugar de asumir cuáles existen.
 
 ## Preferencias de comunicación
 
