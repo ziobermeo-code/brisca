@@ -63,4 +63,4 @@ openclaw mcp list  →  notebooklm: http://localhost:8000/sse
 
 Requiere que la Mac de Ziortza esté encendida y el túnel SSH activo:
 - Mac: `notebooklm-mcp --transport sse --port 8000`
-- Túnel: `ssh -R 8000:localhost:8000 root@212.227.153.70 -N`
+- Túnel: `autossh -M 20000 -R 8000:localhost:8000 root@212.227.153.70 -N`
