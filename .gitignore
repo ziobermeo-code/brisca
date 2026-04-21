@@ -10,6 +10,11 @@
 !main.py
 !player.py
 
+# OpenClaw workspace templates for IZARO
+!SOUL.md
+!AGENTS.md
+!USER.md
+
 # Python
 __pycache__/
 *.py[cod]
