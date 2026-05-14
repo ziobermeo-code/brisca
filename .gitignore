@@ -10,6 +10,10 @@
 !main.py
 !player.py
 
+# Allow the design lab prototype folder
+!claude-design-lab-mi-espacio-creativo/
+!claude-design-lab-mi-espacio-creativo/**
+
 # Python
 __pycache__/
 *.py[cod]

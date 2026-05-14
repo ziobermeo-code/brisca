@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mi Espacio Creativo — prototipo local de captura y organización de ideas creativas." />
+  <title>Mi Espacio Creativo</title>
+  <!-- Sin CDN, sin fuentes externas. Solo archivo local -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="site-logo">
+      Mi Espacio Creativo
+      <span>/ Usuario Demo</span>
+    </div>
+    <div class="header-meta" id="header-date"></div>
+  </header>
+
+  <!-- ===== HERO / SALUDO ===== -->
+  <section class="hero" aria-label="Saludo">
+    <h1 class="hero__greeting" id="greeting-text">Bienvenida</h1>
+    <p class="hero__sub">¿Qué quieres capturar hoy?</p>
+  </section>
+
+  <!-- ===== CAPTURA RÁPIDA ===== -->
+  <form class="capture-bar" id="capture-form" aria-label="Captura rápida">
+    <input
+      type="text"
+      class="capture-bar__input"
+      id="capture-input"
+      placeholder="Anota una idea, referencia o aprendizaje…"
+      maxlength="280"
+      autocomplete="off"
+      spellcheck="true"
+    />
+    <select class="capture-bar__select" id="capture-section" aria-label="Sección destino">
+      <option value="ideas">Ideas</option>
+      <option value="inspiracion">Inspiración visual</option>
+      <option value="proyectos">Proyectos</option>
+      <option value="aprendizajes">Aprendizajes de IA</option>
+    </select>
+    <button type="button" class="capture-bar__btn" id="capture-btn">Guardar</button>
+  </form>
+
+  <!-- ===== RECIENTES ===== -->
+  <section class="recientes" aria-label="Actividad reciente">
+    <p class="recientes__title">Actividad reciente</p>
+    <div class="recientes__list" id="recientes-list">
+      <!-- Renderizado por app.js -->
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN: IDEAS ===== -->
+  <section aria-labelledby="title-ideas">
+    <h2 class="section-title" id="title-ideas">
+      <span class="section-icon">💡</span> Ideas
+    </h2>
+    <div class="card-grid" id="grid-ideas">
+      <!-- Renderizado por app.js -->
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN: INSPIRACIÓN VISUAL ===== -->
+  <section aria-labelledby="title-inspiracion">
+    <h2 class="section-title" id="title-inspiracion">
+      <span class="section-icon">🎨</span> Inspiración visual
+    </h2>
+    <div class="card-grid" id="grid-inspiracion">
+      <!-- Renderizado por app.js -->
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN: PROYECTOS ===== -->
+  <section aria-labelledby="title-proyectos">
+    <h2 class="section-title" id="title-proyectos">
+      <span class="section-icon">📁</span> Proyectos
+    </h2>
+    <div class="card-grid" id="grid-proyectos">
+      <!-- Renderizado por app.js -->
+    </div>
+  </section>
+
+  <!-- ===== SECCIÓN: APRENDIZAJES DE IA ===== -->
+  <section aria-labelledby="title-aprendizajes">
+    <h2 class="section-title" id="title-aprendizajes">
+      <span class="section-icon">🤖</span> Aprendizajes de IA
+    </h2>
+    <div class="card-grid" id="grid-aprendizajes">
+      <!-- Renderizado por app.js -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    Mi Espacio Creativo &mdash; prototipo local &mdash; sin servicios externos
+  </footer>
+
+</div><!-- /.app-wrapper -->
+
+<!-- Toast de confirmación -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Fecha en header (sin depender de librería) -->
+<script>
+  (function () {
+    var el = document.getElementById('header-date');
+    if (el) {
+      var now = new Date();
+      el.textContent = now.toLocaleDateString('es-ES', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      });
+    }
+  })();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
